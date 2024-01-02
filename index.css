@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  Poppins;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: #0c1022;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    background: rgba(0, 0,0.75,);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 32px;
+    overflow: hidden;
+
+
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    height: 650px;
+    width: 650px;
+    background: conic-gradient(
+        transparent,transparent,transparent,#d40000
+    );
+    animation: animate 4s linear infinite;
+}
+
+
+
+.container::after{
+    content: "";
+    position: absolute;
+    height: 650px;
+    width: 650px;
+    background: conic-gradient(
+        transparent,transparent,transparent,#5100ff
+    );
+    animation: alternate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.image{
+    position: absolute;
+    inset: 5px;
+    background-color: #0c1022;
+    z-index: 1;
+    border-radius: 16px;
+}
+
+.form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+.form-box .form h2{
+    font-size: 32px;
+    color: #de6464;
+    text-align: center;
+}
+.form .input-box{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #de6464;
+}
+
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 35px 0 5px;
+    color: #de6464;
+   
+
+}
+
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+
+.input-box label{
+    position: absolute;
+    color: #de6464;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .3s;
+
+}
+
+.group{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.group a{
+    position: relative;
+    top: -15px;
+    color: #de6464;
+    text-decoration: none;
+    font-weight: 500;
+}
+button{
+    height: 40px;
+    width: 90px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+button:focus{
+    color: #de6464;
+    background-color: #0c1022;
+    border: 2px solid #de6464;
+}
